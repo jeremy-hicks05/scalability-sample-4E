@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using scalability_sample_4E.Models;
+using System;
+
 namespace scalability_sample_4E
 {
     public class Program
@@ -8,6 +12,9 @@ namespace scalability_sample_4E
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
