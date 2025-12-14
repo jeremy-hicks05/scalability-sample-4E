@@ -1,0 +1,40 @@
+﻿/*body {
+    background-color: hotpink !important;
+}*/
+
+.navbar {
+    background-color: #1a1a1a; /* slightly lighter/darker than body */
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #9ecbff;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.table {
+    color: #e0e0e0;
+}
+
+a {
+    color: #9ecbff;
+}
+

@@ -18,8 +18,8 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<Book> Books { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=tcp:hicksj17proofofconcept-server.database.windows.net,1433;Initial Catalog=Library;User ID=sysadmin;Password=!Nthgthdgdcrtdtrk2;Encrypt=True;TrustServerCertificate=False;");
+        => optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("LibraryConnection", EnvironmentVariableTarget.Machine) ??
+            Environment.GetEnvironmentVariable("LibraryConnection"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
